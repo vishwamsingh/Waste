@@ -1,0 +1,50 @@
+<html>
+<head>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="waste.js"></script>
+	<link rel="stylesheet" href="blueprint/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="blueprint/print.css" type="text/css" media="print">
+</head>
+<body>
+	
+	<div data-ng-app="wasteTypeApp" data-ng-controller="wasteTypeCtrl" class="container">
+		<h1>Add Waste Type</h1> 
+		<form data-ng-submit="submitWasteType()">
+			<div id="waste-type">
+				<span id="waste-type-name">
+					<label>Waste Type: 
+						<input type="text" placeholder="at least 3 characters" data-ng-model="newTypeName">
+					</label> 
+				</span>
+				<span id="waste-type-photo-required">
+						<label>Photo Required:
+							<select required data-ng-model="newTypePhotoRequired">
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</label>
+				</span>
+				<span id="waste-type-submit">
+					<button type="submit">Add</button>
+				</span>
+				<span id="waste-type-add-result" data-ng-bind="addresult"></span>
+			</div>
+			
+		</form>
+		<div id="waste-type-list">
+			<table>
+				<tr title="table-title">
+					<td class="span-6 colborder">Type</td>
+    				<td class="span-4 last">Photo Required</td>
+				</tr>
+  				<tr title="data-rows" data-ng-repeat="type in types">
+    				<td class="span-6 colborder">{{ type.typename }}</td>
+    				<td class="span-4 last">{{ type.photorequired }}</td>
+  				</tr>
+			</table>
+		</div>
+		
+	</div>
+
+</body>
+</html>

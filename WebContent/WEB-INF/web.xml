@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <servlet-name>NewWasteServlet</servlet-name>
+    <servlet-class>org.mywaste.NewWaste</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>GetWasteServlet</servlet-name>
+    <servlet-class>org.mywaste.GetWasteType</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewWasteServlet</servlet-name>
+    <url-pattern>/NewWaste.html</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetWasteServlet</servlet-name>
+    <url-pattern>/GetWasteType.html</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>wastetype.html</welcome-file>
+  </welcome-file-list>
+</web-app>
